@@ -1,17 +1,14 @@
 1class Solution {
 2    public int countPartitions(int[] nums) {
-3        int partition = 0;
-4        int leftsum=0;
-5        for (int i = 0; i < nums.length-1; i++) {
-6            leftsum += nums[i];
-7            int rightsum=0;
-8            for (int j = i + 1; j < nums.length; j++) {
-9                rightsum += nums[j];
-10            }
-11            if(Math.abs(leftsum-rightsum) % 2 == 0){
-12                partition++;
-13            }
-14        }
-15        return partition;
-16    }
-17}
+3        int total = 0;
+4        for(int num : nums) total+=num;
+5        int left = 0;
+6        int partition = 0;
+7        for(int i=0; i<nums.length-1; i++){
+8            left += nums[i];
+9            int right = total - left;
+10            if(Math.abs(right - left) % 2 == 0) partition++;
+11        }
+12        return partition;
+13    }
+14}
