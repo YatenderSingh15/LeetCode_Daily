@@ -3,12 +3,6 @@
 3        if(a.equals(b)){
 4            return -1;
 5        }
-6        else if(a.length() >= b.length()){
-7            return a.length();
-8        }
-9        else{
-10            return b.length();
-11        }
-12        
-13    }
-14}
+6        return Math.max(a.length(),b.length());
+7    }
+8}
