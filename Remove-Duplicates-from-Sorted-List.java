@@ -10,16 +10,18 @@
 10 */
 11class Solution {
 12    public ListNode deleteDuplicates(ListNode head) {
-13        if(head == null)return null;
-14        ListNode curr=head;
-15        while(head != null && curr.next != null){
-16            if(curr.val == curr.next.val){
-17                curr.next=curr.next.next;
-18            }
-19            else{
-20                curr=curr.next;
-21            }
-22        }
-23        return head;
-24    }
-25}
+13        ListNode node = head;
+14        if(node == null){
+15            return node;
+16        }
+17        while(node.next != null){
+18            if(node.val == node.next.val){
+19                node.next = node.next.next;
+20            }
+21            else{
+22                node = node.next;
+23            }
+24        }
+25        return head;
+26    }
+27}
