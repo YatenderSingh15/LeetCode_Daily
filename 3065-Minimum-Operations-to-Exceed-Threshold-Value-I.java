@@ -5,9 +5,6 @@ class Solution {
             if(nums[i] < k){
                 ans++;
             }
-            else{
-                continue;
-            }
         }
         return ans;
     }
