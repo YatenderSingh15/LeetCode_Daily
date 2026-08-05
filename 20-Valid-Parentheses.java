@@ -7,12 +7,13 @@ class Solution {
                 st.push(ch);
             }
             else{
-                if(st.size() == 0) return false;
-                if(ch == ')' && st.peek() != '(') return false;
-                if(ch == '}' && st.peek() != '{') return false;
-                if(ch == ']' && st.peek() != '[') return false;
+                if(st.size() == 0)return false;
+                if(ch == ')' && st.peek() != '(')return false;
+                if(ch == '}' && st.peek() != '{')return false;
+                if(ch == ']' && st.peek() != '[')return false;
                 st.pop();
             }
+            
         }
         if(st.size() > 0)return false;
         else return true;
