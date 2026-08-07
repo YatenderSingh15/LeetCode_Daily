@@ -1,2 +1,1 @@
-# Write your MySQL query statement below
-select  Max(salary) as SecondHighestSalary from employee where( salary NOT IN(select MAX(salary) from Employee));
+select  (select distinct salary from employee as e1 where 1 =(select count(distinct salary) from Employee as e2 where(e2.salary > e1.salary))) as SecondHighestSalary;
